@@ -7,7 +7,7 @@ sudo yum install maven -y
 if [ -d "veera-addressbook" ]
 then
    echo "repo is already cloned and exists"
-   cd /home/ec2-user/veera-addressbook
+   cd /home/ec2-user/veera-addressbook/addressbook
    git checkout test-practice
    git pull origin test-practice
 else
@@ -16,6 +16,7 @@ else
    cd /home/ec2-user/veera-addressbook
    git clone https://github.com/veerachandra/addressbook.git
    git checkout test-practice
+   cd /home/ec2-user/veera-addressbook/addressbook
 fi
 echo "test-practice repo got updated using git pull origin test-practice"
 mvn package
