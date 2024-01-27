@@ -171,11 +171,11 @@
             </plugin>
 			<!-- veera added -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
-			<dependency>
-				<groupId>org.apache.maven.plugins</groupId>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.4.0</version>
-			</dependency>
+			</plugin>
 			<!-- end of veera added -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
