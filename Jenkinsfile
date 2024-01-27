@@ -11,7 +11,7 @@ pipeline {
             agent {label "jenkins-slave1"}
             steps {              
               script{
-                     echo "COMPILING"
+                     echo "Veera mvn COMPILING"
                      sh "mvn compile"
               }             
             }
@@ -21,7 +21,7 @@ pipeline {
             agent any
             steps {           
               script{
-                   echo "RUNNING THE TC"
+                   echo "Veera mvn RUNNING THE TC"
                    sh "mvn test"
                 }              
              
@@ -39,11 +39,11 @@ pipeline {
 
                 script{
                     sshagent(['slave-2']) {
-                    echo "Copy the server-script.sh file to 172.31.38.62 in AWS for installing basic libraries mentioned in this file"
+                    echo "veera Copy the server-script.sh file to 172.31.38.62 in AWS for installing basic libraries mentioned in this file"
                     sh "scp -o StrictHostKeyChecking=no server-script.sh ec2-user@172.31.38.62:/home/ec2-user"
-                    echo "ssh -o StrictHostKeyChecking=no ec2-user@172.31.38.62 'bash server-script.sh' starts executing the file to 172.31.38.62 in AWS for installing basic libraries mentioned in this file"
+                    echo "veera ssh -o StrictHostKeyChecking=no ec2-user@172.31.38.62 'bash server-script.sh' starts executing the file to 172.31.38.62 in AWS for installing basic libraries mentioned in this file"
                     sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.38.62 'bash server-script.sh'"
-                   echo "Creating the mvn package for the git project for the new slave instance 172.31.38.62 in AWS "
+                   echo "veera Creating the mvn package for the git project for the new slave instance 172.31.38.62 in AWS "
                    sh "mvn package"
                 }             
                 }
