@@ -11,7 +11,7 @@ then
    git checkout test-practice
    git pull origin  test-practice
 else
-   git clone https://github.com/preethid/addressbook.git
+   git clone https://github.com/veerachandra/addressbook.git
    git checkout test-practice
 fi
 
